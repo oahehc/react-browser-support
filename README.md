@@ -2,5 +2,8 @@
 handle browser support for React project
 
 ---
-1. check user's browser at index.html
-2. add unsupport.html in public folder
+### public/index.html
+check user's browser and redirect to unsupport.html with browser hash if the browser is not in our support list.
+
+### public/unsupport.html
+display upgrade and download browser link base on browser type
