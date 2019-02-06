@@ -7,35 +7,76 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="theme-color" content="#000000" />
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <script>
+      /*!
+      * copy from is.js : https://is.js.org/
+      * Author: Aras Atasaygin
+      */
+      var navigator = window && window.navigator;
+      var userAgent = (navigator && navigator.userAgent || '').toLowerCase();
+      var vendor = (navigator && navigator.vendor || '').toLowerCase();
+      var comparator = {
+        '<': function(a, b) { return a < b; },
+        '<=': function(a, b) { return a <= b; },
+        '>': function(a, b) { return a > b; },
+        '>=': function(a, b) { return a >= b; }
+      };
+      function compareVersion(version, range) {
+        var string = (range + '');
+        var n = +(string.match(/\d+/) || NaN);
+        var op = string.match(/^[<>]=?|/)[0];
+        return comparator[op] ? comparator[op](version, n) : (version == n || n !== n);
+      }
+      function opera(range) {
+        var match = userAgent.match(/(?:^opera.+?version|opr)\/(\d+)/);
+        return match !== null && compareVersion(match[1], range);
+      };
+      function chrome(range) {
+        var match = /google inc/.test(vendor) ? userAgent.match(/(?:chrome|crios)\/(\d+)/) : null;
+        return match !== null && !opera() && compareVersion(match[1], range);
+      };
+      function edge(range) {
+        var match = userAgent.match(/edge\/(\d+)/);
+        return match !== null && compareVersion(match[1], range);
+      };
+      function firefox(range) {
+        var match = userAgent.match(/(?:firefox|fxios)\/(\d+)/);
+        return match !== null && compareVersion(match[1], range);
+      };
+      function ie(range) {
+        var match = userAgent.match(/(?:msie |trident.+?; rv:)(\d+)/);
+        return match !== null && compareVersion(match[1], range);
+      };
+      function safari(range) {
+        var match = userAgent.match(/version\/(\d+).+?safari/);
+        return match !== null && compareVersion(match[1], range);
+      };
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+      // redirect to un-support page if browser is not in our support range
+      if (chrome('<49')) {
+        window.location = './unsupport.html#chrome';
+      }
+      if (firefox('<50')) {
+        window.location = './unsupport.html#firefox';
+      }
+      if (safari('<10')) {
+        window.location = './unsupport.html#safari';
+      }
+      if (safari('<10')) {
+        window.location = './unsupport.html#safari';
+      }
+      if (ie('<10')) {
+        window.location = './unsupport.html#ie';
+      }
+      if (edge('<14')) {
+        window.location = './unsupport.html#edge';
+      }
+    </script>
   </body>
 </html>

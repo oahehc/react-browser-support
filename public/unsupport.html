@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    li {
+      display: none;
+    }
+  </style>
+  <title>un-support browser</title>
+</head>
+<body>
+  <h3>We are unable to support your browser, please upgrade or download other browser!</h3>
+  <ul>
+    <li class="chrome"><a href="https://support.google.com/chrome/answer/95414?co=GENIE.Platform%3DDesktop&hl=en" target="_blank" rel="noopener">Upgrade Chrome</a></li>
+    <li class="firefox"><a href="https://support.mozilla.org/en-US/kb/update-firefox-latest-version" target="_blank" rel="noopener">Upgrade Firefox</a></li>
+    <li class="safari"><a href="https://support.apple.com/en-us/HT204416" target="_blank" rel="noopener">Upgrade Safari</a></li>
+    <li class="ie"><a href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads" target="_blank" rel="noopener">Upgrade IE</a></li>
+    <li class="firefox safari ie edge"><a href="https://www.google.com/intl/en/chrome/" target="_blank" rel="noopener">Download Chrome</a></li>
+    <li class="chrome safari ie edge"><a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank" rel="noopener">Download Firefox</a></li>
+  </ul>
+  <script>
+    var hash = window.location.hash.replace('#', '');
+
+    if (hash) {
+      var className = '.' + hash;
+      var elements = document.querySelectorAll(className);
+      for (var i = 0; i < elements.length; ++i) {
+        elements[i].style.display = 'list-item';
+      }
+    }
+  </script>
+</body>
+</html>
