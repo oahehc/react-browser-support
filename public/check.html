@@ -55,19 +55,19 @@
 
     // redirect to un-support page if browser is not in our support range
     if (chrome('<49')) {
-      window.location = './unsupport.html#chrome';
+      document.location = './unsupport.html#chrome';
     } else if (firefox('<50')) {
-      window.location = './unsupport.html#firefox';
+      document.location = './unsupport.html#firefox';
     } else if (safari('<10')) {
-      window.location = './unsupport.html#safari';
+      document.location = './unsupport.html#safari';
     } else if (safari('<10')) {
-      window.location = './unsupport.html#safari';
+      document.location = './unsupport.html#safari';
     } else if (ie('<10')) {
-      window.location = './unsupport.html#ie';
+      document.location = './unsupport.html#ie';
     } else if (edge('<14')) {
-      window.location = './unsupport.html#edge';
+      document.location = './unsupport.html#edge';
     } else {
-      window.location = './index.html';
+      document.location = './index.html';
     }
 
   </script>
