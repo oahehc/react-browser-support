@@ -18,4 +18,4 @@ display upgrade and download browser link base on browser type
 
 
 ---
-[try here](https://react-browser-support.netlify.com/)
+[try here](https://react-browser-support.netlify.com/check.html)
