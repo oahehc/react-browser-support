@@ -56,24 +56,20 @@
     // redirect to un-support page if browser is not in our support range
     if (chrome('<49')) {
       window.location = './unsupport.html#chrome';
-    }
-    if (firefox('<50')) {
+    } else if (firefox('<50')) {
       window.location = './unsupport.html#firefox';
-    }
-    if (safari('<10')) {
+    } else if (safari('<10')) {
       window.location = './unsupport.html#safari';
-    }
-    if (safari('<10')) {
+    } else if (safari('<10')) {
       window.location = './unsupport.html#safari';
-    }
-    if (ie('<10')) {
+    } else if (ie('<10')) {
       window.location = './unsupport.html#ie';
-    }
-    if (edge('<14')) {
+    } else if (edge('<14')) {
       window.location = './unsupport.html#edge';
+    } else {
+      window.location = './index.html';
     }
 
-    window.location = './index.html';
   </script>
 </body>
 </html>
