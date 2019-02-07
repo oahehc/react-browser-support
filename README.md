@@ -7,3 +7,6 @@ check user's browser and redirect to unsupport.html with browser hash if the bro
 
 ### public/unsupport.html
 display upgrade and download browser link base on browser type
+
+---
+[try here](https://react-browser-support.netlify.com/)
