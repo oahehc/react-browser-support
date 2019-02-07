@@ -2,7 +2,7 @@
 handle browser support for React project
 
 ---
-### public/index.html
+### public/check.html
 check user's browser and redirect to unsupport.html with browser hash if the browser is not in our support list.
 ```
 Chrome 49 (release: 2016/3/2)
